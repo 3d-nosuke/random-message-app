@@ -31,7 +31,7 @@ const quotes = [
     { quote: "人生は選択の連続であり、その選択が運命を決める。", person: "エレノア・ルーズベルト", years: "1884-1962", description: "アメリカ合衆国のファーストレディ" },
     { quote: "世界を変えたいなら、まず自分が変わることだ。", person: "マハトマ・ガンディー", years: "1869-1948", description: "政治指導者・思想家" },
     { quote: "努力は必ず報われるとは限らないが、成功者はすべて努力している。", person: "オプラ・ウィンフリー", years: "1954-", description: "TV司会者・実業家" },
-    { quote: "人生の目的は、自分の才能を見つけ、それを世界と共有することだ。", person: "アインシュタイン", years: "1879-1955", description: "物理学者" }
+    { quote: "人生の目的は、自分の才能を見つけ、それを世界と共有することだ。", person: "アインシュタイン", years: "1879-1955", description: "物理学者" },
     { quote: "あなたが変われば、世界も変わる。", person: "マハトマ・ガンディー", years: "1869-1948", description: "政治指導者・思想家" },
     { quote: "夢を持て、それがあればこの先の未来が決まる。", person: "ウォルト・ディズニー", years: "1901-1966", description: "アニメーター・実業家" },
     // 🔹 日本の偉人の名言
@@ -65,21 +65,21 @@ export default function RandomMessage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <Card>
-        <h2 className="text-xl font-bold mb-4">本日の名言</h2>
+    <div className="container">
+      <div className="card">
+        <h2>本日の名言</h2>
         {quote ? (
           <>
-            <p className="text-lg font-semibold">「{quote.quote}」</p>
-            <hr className="my-2 border-t border-gray-400" />
-            <p className="text-md font-bold">{quote.person} ({quote.years})</p>
-            <p className="text-sm text-gray-600">{quote.description}</p>
+            <p className="quote-text">「{quote.quote}」</p>
+            <hr />
+            <p className="quote-person">{quote.person} ({quote.years})</p>
+            <p className="quote-description">{quote.description}</p>
           </>
         ) : (
-          <p className="text-lg mb-4">ボタンを押して名言を表示！</p>
+          <p>ボタンを押して名言を表示！</p>
         )}
         <Button onClick={generateQuote}>名言を取得</Button>
-      </Card>
+      </div>
     </div>
   );
 }
