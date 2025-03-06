@@ -73,10 +73,20 @@ const mbtiTraits = {
   ],
 };
 
+// MBTIごとのイラスト（画像のパス）
+const mbtiImages = {
+  ENTP: "/images/ENTP.png",
+  ENTJ: "/images/ENTJ.png",
+  ENFP: "/images/ENFP.png",
+  INFJ: "/images/INFJ.png",
+  // 他のMBTIタイプも追加...
+};
+
 export default function MBTIPage() {
   const { type } = useParams();
   const mbtiData = mbtiDescriptions[type.toUpperCase()] || { title: "不明", description: "該当するMBTIタイプが見つかりません。" };
   const traits = mbtiTraits[type.toUpperCase()] || ["情報がありません。"];
+  const imageSrc = mbtiImages[type.toUpperCase()] || "/images/default.png";
 
   const [message, setMessage] = useState(traits[0]);
 
@@ -89,6 +99,7 @@ export default function MBTIPage() {
     <div style={{ textAlign: "center", marginTop: "50px", padding: "20px" }}>
       <h2>{mbtiData.title}</h2>
       <p>{mbtiData.description}</p>
+      <img src={imageSrc} alt={type} style={{ width: "200px", height: "200px", borderRadius: "10px", margin: "20px auto" }} />
       <hr style={{ width: "50%", margin: "20px auto", borderTop: "1px solid #ccc" }} />
       <p style={{ fontSize: "1.2em", fontWeight: "bold" }}>{message}</p>
       <Button onClick={changeMessage}>性格を知る</Button>
