@@ -61,21 +61,33 @@ body {
 }
 
 /* ボタンのスタイル */
+/* ボタンのスタイル（オシャレな緑系カラー） */
 button {
   margin-top: 15px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 1rem;
+  font-weight: bold;
   color: white;
-  background: #ff6b6b;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* ホバー時のアニメーション */
 button:hover {
-  background: #ff4757;
+  background: linear-gradient(135deg, #388e3c, #43a047);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+/* クリック時の押し込み感 */
+button:active {
+  transform: scale(0.95);
+}
+
 
 /* 区切り線 */
 hr {
