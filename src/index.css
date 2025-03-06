@@ -13,7 +13,29 @@ code {
 }
 
 /* 全体のスタイル */
+/* 背景グラデーションのアニメーション */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background: linear-gradient(270deg, #667eea, #764ba2, #ff6b6b);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  color: white;
+}
+
+/* body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
@@ -24,7 +46,7 @@ body {
   text-align: center;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
-}
+} */
 
 /* 名言カードのスタイル */
 .card {
